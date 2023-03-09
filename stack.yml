@@ -1,0 +1,15 @@
+version: "3.4"
+
+services:
+  dashboard:
+    image: "${DOCKER_IMAGE}"
+    restart: always
+    ports:
+      - 10008:5000
+    volumes:
+      - "./data:/var/lib/registry:rw"
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 256M
