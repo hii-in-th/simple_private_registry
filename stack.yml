@@ -2,12 +2,13 @@ version: "3.4"
 
 services:
   dashboard:
-    image: "${DOCKER_IMAGE}"
+    image: "registry:2"
     restart: always
     ports:
-      - 10008:5000
+      - 5000:5000
     volumes:
       - "./data:/var/lib/registry:rw"
+      - "/etc/hosts:/etc/hosts:ro"
     deploy:
       resources:
         limits:
